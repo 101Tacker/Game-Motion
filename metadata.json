@@ -1,0 +1,6 @@
+{
+  "name": "Game Motion",
+  "description": "Game Station Console Runtime for PSP, PS2, PS3, and Godot with OS Firmware verification and Bluetooth Controller integration",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

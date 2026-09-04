@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Pure deep black background -->
+    <path
+        android:fillColor="#050508"
+        android:pathData="M0,0h108v108h-108z" />
+    
+    <!-- Subtle dark radial/circular ambient glow ring -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#15202B"
+        android:strokeWidth="1.2"
+        android:pathData="M54,18 A36,36 0 1,0 54,90 A36,36 0 1,0 54,18" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#0E1620"
+        android:strokeWidth="0.8"
+        android:pathData="M54,8 A46,46 0 1,0 54,100 A46,46 0 1,0 54,8" />
+</vector>

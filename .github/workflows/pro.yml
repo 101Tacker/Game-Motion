@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Pull down your repository code
+      - uses: actions/checkout@v4
+
+      # 2. Set up Java Environment
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      # 3. Fix the missing gradlew wrapper error dynamically
+      - name: Setup Gradle and Generate Wrapper
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: wrapper # Generates wrapper based on your gradle files
+
+      # 4. Compile the application into an APK
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug
+
+      # 5. Extract and upload the finished APK file
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Game-Motion-Debug-APK
+          path: app/build/outputs/apk/debug/*.apk
